@@ -1,0 +1,5 @@
+{
+  "name": "Crisis AI: Emergency Management Platform",
+  "description": "An AI-powered dashboard for real-time disaster monitoring, risk assessment, and response coordination. It leverages generative AI to analyze incoming reports, generate action plans, and provide multilingual alerts.",
+  "requestFramePermissions": []
+}
