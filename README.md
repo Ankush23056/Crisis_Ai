@@ -6,7 +6,7 @@
 
 ## 🚀 Live Production Link
 
-> [Insert Your Netlify URL Here]
+> [https://crisis-ai.netlify.app/]
 
 ---
 
@@ -57,11 +57,11 @@ A granular tool where users input specific meteorological data (Temperature, Hum
 
 ```
 ├── src/
-│   ├── components/        
+│   ├── components/
 │   │   ├── NationalIntelligence/  # Macro-level country reports
 │   │   ├── RiskDashboard/         # Localized weather prediction
 │   │   └── ResponseModal/         # AI Dispatch & SOPs
-│   ├── services/          
+│   ├── services/
 │   │   └── aiService.js           # Groq SDK Integration & Prompt Hub
 │   └── App.jsx                    # Root state management
 ├── .env.local                     # API Key Storage (Protected)
