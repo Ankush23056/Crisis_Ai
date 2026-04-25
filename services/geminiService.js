@@ -158,6 +158,25 @@ export const findNearbyServices = async (location, serviceType) => {
   return Promise.resolve(cityServices[serviceType]);
 };
 
+export const getProactiveProximityData = async (location, serviceType) => {
+  try {
+    const data = await callJSON(
+      `Act as an emergency logistics AI. Generate a list of 3-5 realistic nearby ${serviceType} facilities for the location: ${location}.
+
+      Respond with a JSON object containing a single key "services" whose value is an array of objects.
+      Each object must have these fields:
+      - "name": The name of the facility (string).
+      - "address": A realistic local address or area (string).
+      - "distance": Estimated distance (e.g., "1.2 km", "500 m") (string).`
+    );
+
+    return data.services || [];
+  } catch (error) {
+    console.error(`Error fetching proactive proximity data for ${serviceType}:`, error);
+    throw new Error(`Failed to find nearby ${serviceType} services.`);
+  }
+};
+
 export const predictDisasterRisk = async (location, environmentalData) => {
   try {
     return await callJSON(

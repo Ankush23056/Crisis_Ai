@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { findNearbyServices } from "../services/geminiService";
+import { getProactiveProximityData } from "../services/geminiService";
 import { HeartPulse, Landmark, Bus, Search, Bot } from "lucide-react";
 
 const ProximityAnalysisSection = ({ alerts, setNotification }) => {
@@ -26,9 +26,9 @@ const ProximityAnalysisSection = ({ alerts, setNotification }) => {
     setSearchCategory(category);
 
     try {
-      const serviceResults = await findNearbyServices(
+      const serviceResults = await getProactiveProximityData(
         selectedAlert.location,
-        category,
+        categoryInfo[category]?.title || category,
       );
       setResults(serviceResults);
       setNotification(
